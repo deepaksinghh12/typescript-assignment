@@ -1,0 +1,36 @@
+{
+  "info": {
+    "name": "Marketplace APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Signup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\":\"Test\", \"email\":\"t@example.com\", \"password\":\"Password123\", \"role\":\"customer\" }"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/signup"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"email\":\"seller1@example.com\", \"password\":\"Password123\" }"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login"
+        }
+      }
+    }
+  ]
+}

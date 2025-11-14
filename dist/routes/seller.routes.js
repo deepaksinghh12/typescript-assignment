@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.sellerRouter = void 0;
+const express_1 = require("express");
+const seller_controller_1 = require("../controllers/seller.controller");
+const auth_middleware_1 = require("../middlewares/auth.middleware");
+exports.sellerRouter = (0, express_1.Router)();
+exports.sellerRouter.post('/product', (0, auth_middleware_1.authenticate)(['seller']), seller_controller_1.addProduct);
+exports.sellerRouter.put('/product/:id', (0, auth_middleware_1.authenticate)(['seller']), seller_controller_1.updateProduct);
+exports.sellerRouter.get('/orders', (0, auth_middleware_1.authenticate)(['seller']), seller_controller_1.listOrders);
+exports.sellerRouter.post('/orders/:orderId/accept', (0, auth_middleware_1.authenticate)(['seller']), seller_controller_1.acceptOrderItems);
+exports.sellerRouter.post('/orders/:orderId/assign-delivery', (0, auth_middleware_1.authenticate)(['seller']), seller_controller_1.assignDelivery);
